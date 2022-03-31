@@ -1,0 +1,25 @@
+.titulo{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+    color: black;
+    text-align: center;
+}
+
+.img1{
+
+    display: block;
+    margin: 0 auto;
+    width: 100vh !important; 
+    min-height:100vh !important;
+    position: center;
+    size: cover;
+}
+
+.caixa{
+    background-color: #cbc6c6;
+    }
+
+.postagens {
+        background-color: black !important;
+        background-image: url(https://www.einerd.com.br/wp-content/uploads/2022/01/eren-attack-on-titan-890x466.jpg)!important;
+
+}
