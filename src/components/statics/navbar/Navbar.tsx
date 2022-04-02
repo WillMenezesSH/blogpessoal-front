@@ -2,7 +2,19 @@ import React from 'react';
 import { AppBar, Toolbar, Typography, Box } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import './Navbar.css'
+import {useHistory} from 'react-router-dom'
+import useLocalStorage from 'react-use-localstorage';
+
 function Navbar() {
+    const [toke, setToken] = useLocalStorage('token');
+    let history = useHistory ();
+
+    function goLogout(){
+        setToken('')
+        alert("Usuário deslogado!")
+        history.push('/login')
+
+    }
     return (
         <>
             <AppBar position="static" className='back'>
@@ -34,27 +46,36 @@ function Navbar() {
                         
                         
                         <Box mx={1} className='cursor'>
+                        <Link to='/posts' className='text-decorator-none'>
                             <Typography variant="h6" color="inherit">
                                 Postagens |
                             </Typography>
+                            </Link>
                         </Box>
+                        
+                        <Link to='/temas' className='text-decorator-none'>
                         <Box mx={1} className='cursor'>
                             <Typography variant="h6" color="inherit">
                                 Temas |
                             </Typography>
-                        </Box>
+                            </Box>
+                            </Link>
+    
+                        <Link to='/formularioTema' className='text-decorator-none'>
                         <Box mx={1} className='cursor'>
                             <Typography variant="h6" color="inherit">
                                 Cadastrar tema |
                             </Typography>
                         </Box>
-                        <Link to='/login' className='text-decorator-none'>
-                            <Box mx={1} className='cursor'> 
+                        </Link>
+
+                        
+                            <Box mx={1} className='cursor' onClick={goLogout}> 
                                 <Typography variant="h6" color="inherit">
                                     Logout 
                                 </Typography>
                             </Box>
-                        </Link>
+                        
                         
                     </Box>
 
